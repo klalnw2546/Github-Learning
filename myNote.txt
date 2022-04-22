@@ -1,0 +1,61 @@
+==================================================================================================================
+
+คำศัพท์ ที่จำเป็น
+
+Local repository = ที่เก็บข้อมูลบนเครื่องเรา
+Remote repository = ที่เก็บข้อมูลที่อยู่บน Server เช่น github
+staging area = สถานะที่ไฟล์อยู่ในสถานะก่อนจะ commit
+*** = คำสั่งที่ใช้บ่อย
+
+==================================================================================================================
+
+คำสั่ง ที่จำเป็น
+
+git init = เรียกใช้ git ใน path ที่ต้องการ (ใช้แค่ครั้งแรกในการเริ่ม Project)
+
+git add ชื่อไฟล์ = เพิ่มไฟล์นั้น เข้าสู่สถานะ staging area
+git add *.html = เพิ่มไฟล์สกุล .html ทั้งหมดเข้าสู่สถานะ staging area (สามารถใช้เป็น Type อื่นได้)
+*** git add . = เพิ่มไฟล์ทั้งหมด  เข้าสู่สถานะ staging area  ***
+
+git rm -r --cached . = ลบไฟล์ทั้งหมดออกจาก staging area
+git rm --cached ชื่อไฟล์ = ลบไฟล์นั้นออกจาก staging area
+
+*** git status = เช็คสถานะการทำงานของ git ***
+
+*** git commit -m "description" = บันทึกไฟล์ที่ add ลงใน Local repository ***
+
+*** git log = ดูประวัติการ commit (แนะนำใช้ git log --oneline จะอ่านง่ายกว่า) ***
+
+git diff commitIdก่อน commitIdหลัง = แสดงการเปลี่ยนแปลง ก่อน กับ หลัง (commitId ได้จาก git log --oneline)
+
+*** git checkout ชื่อไฟล์ = คืนค่าไฟล์ที่ commit ล่าสุด (คำสั่งเดียวกับการเปลี่ยน branch) ***
+*** git checkout . = คืนค่าไฟล์ที่ commit ล่าสุดทั้งหมด ***
+
+*** git reset ชื่อไฟล์ = นำไฟล์ออกจากการ add คล้ายๆ กับ git rm ***
+*** git reset . = นำไฟล์ทั้งหมดออกจากการ add ***
+
+git reset --hard commitId = ย้อนกลับไปใช้เวอร์ชั่นตาม commitId และจะลบ commit ทั้งหมดที่อยู่หลัง commitId นั้น เช่น 
+มี commit อยู่ 10 version // git reset --hard commitIdversion5 // คือจะกลับไปใช้ version5 และ 6,7,8,9,10 จะถูกลบทิ้ง
+
+*** git branch = เช็ครายชื่อ branch ใน Local repository ***
+*** git checkout -b ชื่อ = สร้าง branch ใหม่แล้วย้ายไปใช้ branch นั้น ***
+*** git checkout ชื่อ = ย้ายไปอยู่ branch นั้นๆ ***
+*** git branch -d ชื่อ = ลบ branch นั้น ***
+
+git merge ชื่อbranch = รวม branch ที่ใช้อยู่กับ branch ที่ป้อนเข้าด้วยกัน
+
+git remote add origin url-github = link ไปยัง remote repository นั้น (ส่วนใหญ่ใช้ครั้งแรกที่ push ไฟล์ขึ้น Project ใหม่)
+
+*** git push -u origin ชื่อbranch = push ไฟล์จากการ commit ขึ้นไปยัง  remote repository ***
+*** git push = push ไฟล์ขึ้นไปยัง remote repository โดยจะอ้างอิงตาม branch ที่ใช้อยู่ ***
+
+*** git pull = ดึงไฟล์ล่าสุดจาก remote repository มาไว้ในเครื่อง อ้างอิงตาม branch ที่ใช้อยู่ ***
+*** git pull origin ชื่อbranch = ดึงไฟล์ล่าสุดจาก remote repository ตามชื่อ branch ***
+
+*** git clone url-github = ดึงไฟล์จาก remote repository ตาม url ใช้สำหรับการนำโปรเจคนั้นๆมาพัฒนาต่อ ***
+
+==================================================================================================================
+
+readme.md  รอศึกษาเพิ่มเติม
+
+==================================================================================================================
